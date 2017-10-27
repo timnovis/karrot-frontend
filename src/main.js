@@ -22,6 +22,12 @@ import log from '@/services/log'
 import './raven'
 import { DetectMobileKeyboardPlugin } from '@/services/detectMobileKeyboard'
 
+if (CORDOVA) {
+  require('@/cordova/url')
+  require('@/cordova/csrf')
+  require('@/cordova/fcm')
+}
+
 Vue.config.productionTip = false
 Vue.use(Quasar)
 Vue.use(DetectMobileKeyboardPlugin)
